@@ -1,0 +1,29 @@
+﻿<Application x:Class="G_micro.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Login.xaml">
+    <Application.Resources>
+
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/G_micro;component/Styles/Background.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/Button.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/CheckBox.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/ComboBox.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/ContextMenu.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/DataGrid.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/DateTimePicker.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/EditPanel.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/Label.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/ListBox.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/Tab.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/TextBlock.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/TextBox.xaml" />
+                <ResourceDictionary Source="/G_micro;component/Styles/Window.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        
+    </Application.Resources>
+</Application>

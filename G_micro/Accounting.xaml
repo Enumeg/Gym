@@ -1,0 +1,74 @@
+﻿<Page x:Class="G_micro.Accounting"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:cc="clr-namespace:Source;assembly=Source"
+      xmlns:ex="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="510" d:DesignWidth="1208"
+	Title="الحسابات" FlowDirection="RightToLeft" Background="#18212a" FontFamily="Arial" FontSize="18">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />            
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="15" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource Label_TextBlock}" Text="مـن :"/>
+            <TextBlock Grid.Column="3" Style="{StaticResource Label_TextBlock}" Text="إلى :" />
+            <ex:DateTimePicker Grid.Column="1" Style="{StaticResource Edit_DateTimePicker}" ValueChanged="From_DTP_ValueChanged" Name="From_DTP" />
+            <ex:DateTimePicker Grid.Column="4" Style="{StaticResource Edit_DateTimePicker}" ValueChanged="From_DTP_ValueChanged" Name="To_DTP" />
+        </Grid>                                                                                
+        <Grid Grid.Row="1" Background="{StaticResource Page_Background}">
+            <Grid.ColumnDefinitions>              
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>             
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource Label_TextBlock}" HorizontalAlignment="Center" Text="الإيرادات" />
+            <TextBlock Grid.Column="2" Style="{StaticResource Label_TextBlock}" HorizontalAlignment="Center" Text="المصروفات" />
+           
+            <DataGrid Grid.Column="0" Grid.Row="1" Style="{StaticResource View_DataGrid}" Name="Income_DG">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="Auto" IsReadOnly="True" Header="التاريخ" Binding="{Binding Path=date,StringFormat=yyyy/MM/dd}" />
+                    <DataGridTextColumn Width="Auto" Binding="{Binding Path=customer}" Header="العميل"/>
+                    <DataGridTextColumn Width="Auto" Binding="{Binding Path=value}" Header="القيمه"/>
+
+                    <DataGridTextColumn Width="Auto" Binding="{Binding Path=paid}" Header="المدفوع"/>
+
+                    <DataGridTextColumn Width="Auto" Binding="{Binding Path=type}" Header="النوع"/>
+                                 
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            
+            <DataGrid Grid.Column="2" Grid.Row="1" Style="{StaticResource View_DataGrid}" Name="Outcome_DG" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Visibility="Collapsed" Binding="{Binding Path=id}" />
+                    <DataGridTextColumn Width="Auto" IsReadOnly="True" Header="التاريخ" Binding="{Binding Path=date,StringFormat=yyyy/MM/dd}" />
+                    <DataGridTextColumn Width="Auto" Binding="{Binding Path=value}" Header="القيمة" />
+                    <DataGridTextColumn Width="Auto" Binding="{Binding Path=type}" Header="نوع المصروف" />
+                    <DataGridTextColumn Width="*" Binding="{Binding Path=description}" Header="البيان" />
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <cc:EditPanel Grid.Column="2" Grid.Row="2" Name="Outcome_EP" Add="Outcome_EP_Add" Edit="Outcome_EP_Edit" Delete="Outcome_EP_Delete"/>
+            <Border Grid.Column="1" Grid.RowSpan="3" Background="#FF20695E"/>
+        </Grid>
+        
+    </Grid>
+</Page>

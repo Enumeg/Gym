@@ -1,0 +1,29 @@
+﻿<Window x:Class="G_micro.User" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="مستخدم" Style="{StaticResource Default_Window}" Width="350"
+        WindowStartupLocation="CenterScreen" >
+    <Grid Name="Main_GD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource Label_TextBlock}" Text="إسم المستخدم :" />
+        <TextBlock Grid.Row="1" Style="{StaticResource Label_TextBlock}" Text="كلمــــــة المـــــــرور :" />
+        <TextBlock Grid.Row="2" Style="{StaticResource Label_TextBlock}" Text="كلمــــــة المـــــــرور :" />
+        <TextBlock Grid.Row="3" Style="{StaticResource Label_TextBlock}" Text="المـــــجــــمــــوعـــــة :" />
+        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource Edit_TextBox}" Name="Name_TB" />
+        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource Edit_TextBox}" Name="Password_TB" />
+        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource Edit_TextBox}" Name="RePassword_TB" />
+        <ComboBox Grid.Column="1" Grid.Row="3" Style="{StaticResource Edit_ComboBox}" Name="Groups_CB" SelectionChanged="Groups_CB_SelectionChanged" />
+        <CheckBox Grid.Column="0" Grid.Row="4" Style="{StaticResource New_CheckBox}" Name="New" />
+        <Button Grid.Column="1" Grid.Row="4" Content="حفظ" Name="add_update_user" Click="add_update_user_Click" />
+    </Grid>
+</Window>
